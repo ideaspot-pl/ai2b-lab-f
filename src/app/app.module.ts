@@ -7,6 +7,7 @@ import { StartComponent } from './start/start.component';
 import { ItemsComponent } from './items/items.component';
 import { UsersComponent } from './users/users.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {JwtModule} from "@auth0/angular-jwt";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => localStorage.getItem('access_token'),
+        allowedDomains: ['labjwt.zecer.wi.zut.edu.pl'],
+      }
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
