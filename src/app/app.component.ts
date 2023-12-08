@@ -25,4 +25,8 @@ export class AppComponent {
   public getUsername(): string | null {
     return this.authService.getUsername();
   }
+
+  public logout(): void {
+    this.authService.logout();
+  }
 }

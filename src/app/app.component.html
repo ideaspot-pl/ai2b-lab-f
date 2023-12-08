@@ -19,5 +19,11 @@
 </div>
 
 <footer>
-  {{ getUsername() || 'Not logged in' }}
+  <div *ngIf="getUsername()">
+    {{ getUsername() }}
+    <a class="logout" href (click)="logout()">Logout</a>
+  </div>
+  <div *ngIf="!getUsername()">
+    Not logged in
+  </div>
 </footer>

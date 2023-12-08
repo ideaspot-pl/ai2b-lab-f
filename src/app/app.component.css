@@ -31,3 +31,8 @@ header nav {
   display: flex;
   gap: 1em;
 }
+
+a.logout {
+  margin-left: 1em;
+  color: var(--accent-color);
+}

@@ -44,6 +44,10 @@ export class AuthService {
     ;
   }
 
+  public logout(): void {
+    localStorage.removeItem('access_token');
+  }
+
   public getUsername(): string | null {
     const token = this.jwtHelper.decodeToken() as AuthToken;
     return token?.sub;
