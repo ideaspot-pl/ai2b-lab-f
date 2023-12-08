@@ -21,4 +21,8 @@ export class AppComponent {
   public canAccessItems(): boolean {
     return this.authService.isAuthenticated();
   }
+
+  public getUsername(): string | null {
+    return this.authService.getUsername();
+  }
 }

@@ -43,4 +43,9 @@ export class AuthService {
       )
     ;
   }
+
+  public getUsername(): string | null {
+    const token = this.jwtHelper.decodeToken() as AuthToken;
+    return token?.sub;
+  }
 }
